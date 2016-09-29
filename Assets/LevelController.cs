@@ -10,4 +10,5 @@ public class LevelController : MonoBehaviour {
 	void Update () {
 		deathCount.text = "Dead: " + Universe.deathCount.ToString();
 	}
+
 }

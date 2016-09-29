@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Universe : MonoBehaviour {
@@ -25,8 +26,11 @@ public class Universe : MonoBehaviour {
 
 	void Inverse() {
 		Universe.inverse = !Universe.inverse;
-		print (Universe.inverse.ToString ());
 		float random = Random.Range(5f, 10f);
 		Invoke("Inverse", random);
+	}
+
+	public static void levelCompleted() {
+		SceneManager.LoadScene ("MainMenu");
 	}
 }
