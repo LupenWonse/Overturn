@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D collision) {
 		GameElement hitObject = collision.gameObject.GetComponent<GameElement>();
-		print (hitObject);
 		if (hitObject && hitObject.killer) {
 			Universe.deathCount += 1;
 			this.transform.position = startPosition;

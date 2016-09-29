@@ -31,8 +31,6 @@ public class Universe : MonoBehaviour {
 	}
 
 	public static void levelCompleted() {
-		print (SceneManager.sceneCountInBuildSettings.ToString());
-		print (SceneManager.GetActiveScene ().buildIndex.ToString());
 		if (SceneManager.GetActiveScene ().buildIndex == SceneManager.sceneCountInBuildSettings - 1) {
 			SceneManager.LoadScene (0);
 		} else {
