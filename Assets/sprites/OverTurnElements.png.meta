@@ -1,12 +1,15 @@
 fileFormatVersion: 2
 guid: 32f2c0864ba53d241a7665d6f16b2609
-timeCreated: 1475122052
+timeCreated: 1475123502
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Spikes_White
     21300002: Spikes_Black
-    21300004: OverTurnElements_2
+    21300004: doorBlack
+    21300006: OverTurnElements_0
+    21300008: OverTurnElements_1
+    21300010: doorWhite
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 48
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -56,7 +59,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spikes_White
+      name: OverTurnElements_0
       rect:
         serializedVersion: 2
         x: 0
@@ -69,7 +72,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Spikes_Black
+      name: OverTurnElements_1
       rect:
         serializedVersion: 2
         x: 0
@@ -82,15 +85,28 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OverTurnElements_2
+      name: doorBlack
       rect:
         serializedVersion: 2
         x: 0
         y: 192
         width: 96
         height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: doorWhite
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
