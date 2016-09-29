@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Universe : MonoBehaviour {
 	public static bool inverse;
+	public static int deathCount = 0;
 	public bool test;
 	public GameObject bg;
 	public GameObject bginverse;
@@ -22,12 +23,9 @@ public class Universe : MonoBehaviour {
 
 	}
 
-	public void testOnClick () {
-		print ("Hello");
-	}
-
 	void Inverse() {
 		Universe.inverse = !Universe.inverse;
+		print (Universe.inverse.ToString ());
 		float random = Random.Range(5f, 10f);
 		Invoke("Inverse", random);
 	}
