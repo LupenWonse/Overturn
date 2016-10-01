@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
 public class TwoColorText : MonoBehaviour {
 
-	public Text text1;
-	public Text text2;
+	public string text1;
+	public string text2;
+
+	private Text textView;
+
+	public void Awake(){
+		textView = GetComponent<Text> ();
+		textView.text = text1;
+	}
 
 	public void onMouseEnter (){
-		text1.color = new Color (text1.color.r, text1.color.b, text1.color.g, 0.0f);
-		text2.color = new Color (text2.color.r, text2.color.b, text2.color.g, 1.0f);
+		textView.text = text2;
 	}
 
 	public void onMouseExit (){
-		text1.color = new Color (text1.color.r, text1.color.b, text1.color.g, 1.0f);
-		text2.color = new Color (text2.color.r, text2.color.b, text2.color.g, 0.0f);
-	}
-
-	public void startGame (){
-		SceneManager.LoadScene ("Level01");
+		textView.text = text1;
 	}
 }
