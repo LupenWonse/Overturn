@@ -36,11 +36,17 @@ public class GameElement : MonoBehaviour {
 		} else if (this.transform.position.x - initialPosition.x < -moving.x){
 			direction = 1;
 		}
+
+		if (this.transform.position.y - initialPosition.y > moving.y) {
+			direction = -1;
+		} else if (this.transform.position.y - initialPosition.y < -moving.y){
+			direction = 1;
+		}
 	}
 
 	void startThrowing(){
 		print ("Throwing");
-		GameObject.Instantiate (throws);
+		GameObject.Instantiate (throws).transform.position = this.transform.position;
 		Invoke ("startThrowing", 4);
 	}
 }
