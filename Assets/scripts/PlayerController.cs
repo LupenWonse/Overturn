@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		isGrounded = Physics2D.OverlapCircle(groundDetector.position, 0.01f, groundLayerMask);
+		float move = Input.GetAxisRaw("Horizontal");
 
 		// If the universe is inverted flip the input
 		if (Universe.inverse) {
