@@ -5,11 +5,20 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed = 0.001f;
 	public float jumpForce = 10f;
 
+
+	public bool isGrounded = false;
+
 	private Vector3 startPosition;
+
+	public Transform groundDetector;
+	public LayerMask groundLayerMask;
+
+
 	Animator anim;
 
 	// Use this for initialization
 	void Start (){
+
 		anim = GetComponent<Animator>();
 		startPosition = this.transform.position;
 	}
@@ -18,6 +27,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		isGrounded = Physics2D.OverlapCircle(groundDetector.position, 1.01f, groundLayerMask);
+		print (Physics2D.OverlapCircle(groundDetector.position, 1.01f, groundLayerMask).ToString());
 		var move = Input.GetAxis("Horizontal");
 
 		// If the universe is inverted flip the input
@@ -39,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 
 
 
-		if (Input.GetKeyDown (jumpKeyCode) && GetComponent<Rigidbody2D>().velocity.y == 0) {
+		if (Input.GetKeyDown (jumpKeyCode) && isGrounded) {
 			GetComponent<Rigidbody2D> ().AddForce(new Vector2 (0, jumpForce) ) ;
 		}
 
@@ -49,6 +60,9 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D collision) {
 		GameElement hitObject = collision.gameObject.GetComponent<GameElement>();
+		//ContactPoint2D test = collision.contacts [0]; 
+		//print (test.normal.ToString());
+
 		if (hitObject && hitObject.killer) {
 			Universe.deathCount += 1;
 			this.transform.position = startPosition;
