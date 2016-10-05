@@ -44,6 +44,16 @@ public class GameElement : MonoBehaviour {
 		}
 	}
 
+	void Update(){
+		if (Universe.inverse) {
+			GetComponent<SpriteRenderer> ().color = Color.white;
+		}
+		else {
+				GetComponent<SpriteRenderer>().color = Color.black;
+			}
+		}
+
+
 	void startThrowing(){
 		print ("Throwing");
 		GameObject.Instantiate (throws).transform.position = this.transform.position;

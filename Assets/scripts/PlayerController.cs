@@ -48,11 +48,15 @@ public class PlayerController : MonoBehaviour {
 		}
 
 
-
 		if (Input.GetKeyDown (jumpKeyCode) && isGrounded) {
 			GetComponent<Rigidbody2D> ().AddForce(new Vector2 (0, jumpForce) ) ;
 		}
 
+		if (!Universe.inverse) {
+			GetComponent<SpriteRenderer> ().color = Color.black;
+		} else {
+			GetComponent<SpriteRenderer> ().color = Color.white;
+		}
 
 	}
 
